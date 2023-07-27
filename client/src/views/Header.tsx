@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
 
 export default function Header() {
 
@@ -7,9 +6,9 @@ export default function Header() {
       <>
         <div className="header">
           <header>
-              <a href="http://google.com">Contact</a>
-              <a href="http://google.com">Portfolio</a>
-              <a href="http://google.com">Logo</a>
+            <a href="http://google.com">Contact</a>
+            <a href="http://google.com">Portfolio</a>
+            <a href="http://google.com">Logo</a>
           </header>
           <div className="centred-div">
             <div>
