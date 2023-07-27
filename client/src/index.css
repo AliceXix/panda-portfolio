@@ -20,6 +20,7 @@ body {
     float: right;
     display: flex;
     flex-direction: row-reverse;
+    margin: 0em 4em;
 }
 
 .header header a {
