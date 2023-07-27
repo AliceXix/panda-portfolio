@@ -7,11 +7,9 @@ export default function Header() {
       <>
         <div className="header">
           <header>
-            <div>
               <a href="http://google.com">Contact</a>
               <a href="http://google.com">Portfolio</a>
               <a href="http://google.com">Logo</a>
-            </div>
           </header>
           <div className="centred-div">
             <div>

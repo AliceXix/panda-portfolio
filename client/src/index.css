@@ -9,22 +9,20 @@ body {
 }
 
 .header {
+    background-color: aqua;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 0em 4em;
+    /* margin: 0em 4em; */
 }
 
 .header header {
     float: right;
-}
-
-.header header div {
     display: flex;
     flex-direction: row-reverse;
 }
 
-.header header div a {
+.header header a {
     padding: 1em;
 }
 
