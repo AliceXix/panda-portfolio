@@ -13,7 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* margin: 0em 4em; */
 }
 
 .header header {
@@ -21,6 +20,10 @@ body {
     display: flex;
     flex-direction: row-reverse;
     margin: 0em 4em;
+}
+
+.header img {
+    height: 100vh;
 }
 
 .header header a {
