@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,300;0,500;1,100&display=swap');
+
+* {
+    font-family: 'Josefin Slab';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    all: unset;
+}
+
+.header {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header header {
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0em 4em;
+}
+
+.header img {
+    height: 100vh;
+}
+
+.header header a {
+    padding: 1em;
+}
+
+.centred-div {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center
+}
+
+.centred-div main {
+    margin: 0em 24em;
 }
