@@ -8,7 +8,7 @@
 }
 
 .cards{
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(14, 14, 14);
   min-height: 50vh;
   padding: 2rem ;
   display: flex;
@@ -24,11 +24,14 @@
   flex-direction: column;
   gap: 2rem;
 }
-
-.icon img{
+.icon > img{
   width: 100px;
   border-radius: 50%;
 }
+.content{
+  text-align: center;
+}
+
 .disclaimer{
   margin-top: 2rem;
   padding-top: 5rem;
@@ -38,6 +41,7 @@
   justify-content: center;
   align-items: center;
 }
-.disclaimer p {
+.disclaimer > p {
   width: 60%;
+  text-align: center;
 }
