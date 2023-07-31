@@ -7,17 +7,22 @@ export default function Contact() {
         <div className="contact">
           <form className="centred-div">
             <div>
-              <input type="text" id="name" name="name" value="Your Name" />
-              <input type="text" id="email" name="email" value="Your Email" />
-              <input type="submit" value="Submit" />
+              <div>
+                <input type="text" id="name" name="name" value="Your Name" />
+                <input type="text" id="email" name="email" value="Your Email" />
+              </div>
+              <div>
+                <input type="submit" value="SUBMIT" />
+              </div>
             </div>
             <div>
               <textarea
                 id="questions"
                 name="questions"
-                value={"Share your thoughts"}
-                rows={20}
-                cols={60}
+                value={`SHARE YOUR THOUGHTS.
+Don’t hesitate to mention any special attention you might require. Ask all the questions you have.`}
+                rows={18}
+                cols={56}
               ></textarea>
             </div>
           </form>
