@@ -8,6 +8,10 @@ body {
     all: unset;
 }
 
+.App {
+    text-align: center;
+}
+
 .header {
     background-color: aqua;
     display: flex;
@@ -39,4 +43,54 @@ body {
 
 .centred-div main {
     margin: 0em 24em;
+}
+
+/* --- */
+
+.values {
+    background-color: black;
+    min-height: 100vh;
+}
+
+.cards {
+    background-color: rgb(14, 14, 14);
+    min-height: 50vh;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    color: white;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.icon>img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.content {
+    text-align: center;
+}
+
+.disclaimer {
+    margin-top: 2rem;
+    padding-top: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.disclaimer>p {
+    width: 60%;
+    text-align: center;
 }
