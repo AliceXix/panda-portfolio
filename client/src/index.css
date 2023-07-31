@@ -101,5 +101,54 @@ body {
     background-color: lightpink;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0em 4em;
+}
+
+.contact input[type=text] {
+    background-color: lightpink;
+    width: 30vw;
+    margin: 2em;
+    border: none;
+    border-bottom: 2px solid red;
+    border-radius: 0px;
+}
+
+.contact input[type=submit] {
+    width: 10em;
+    align-self: center;
+}
+
+.contact textarea {
+    background-color: lightpink;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+.contact form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact footer {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid black;
+}
+
+.contact footer div {
+    margin: 0em 4em;
+}
+
+input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
 }
