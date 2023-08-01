@@ -45,7 +45,7 @@ body {
     margin: 0em 24em;
 }
 
-/* --- */
+/* --- VALUES --- */
 
 .values {
     background-color: black;
@@ -93,4 +93,75 @@ body {
 .disclaimer>p {
     width: 60%;
     text-align: center;
+}
+
+/* --- CONTACT --- */
+
+.contact {
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0em 4em;
+}
+
+.contact input[type=text] {
+    background-color: lightpink;
+    width: 30vw;
+    font-size: 1.5rem;
+    color: gray;
+    margin: 2em 0 2em 0;
+    padding-left: 1em;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+}
+
+.contact input[type=submit] {
+    background-color: lightpink;
+    color: white;
+    font-weight: 600;
+    width: 10vw;
+    align-self: center;
+    padding: 0.5em;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    border-radius: 2px;
+    margin: 4em 0 1em 0;
+}
+
+.contact textarea {
+    background-color: lightpink;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 2px;
+    padding: 3em;
+    color: grey;
+}
+
+.contact form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact footer {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid black;
+}
+
+.contact footer div {
+    margin: 0em 4em;
+}
+
+.contact footer h4 {
+    font-size: 1.3rem;
 }
