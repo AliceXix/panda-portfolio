@@ -38,10 +38,7 @@ body {
     display: flex;
     height: 100vh;
     align-items: center;
-    justify-content: center
-}
-
-.centred-div main {
+    justify-content: center;
     margin: 0em 24em;
 }
 
@@ -93,6 +90,28 @@ body {
 .disclaimer>p {
     width: 60%;
     text-align: center;
+}
+
+/* --- PORTFOLIO --- */
+
+.portfolio {
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.portfolio .centred-div {
+    height: 35vh;
+}
+
+.portfolio .centred-div h2 {
+    font-size: 2rem;
+}
+
+.portfolio .centred-div p {
+    font-size: 1.3rem;
 }
 
 /* --- CONTACT --- */
@@ -152,7 +171,7 @@ body {
 }
 
 .contact footer {
-    height: 20vh;
+    height: 25vh;
     display: flex;
     flex-direction: row;
     border-top: 2px solid black;
