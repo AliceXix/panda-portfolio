@@ -10,7 +10,7 @@ export default function Header() {
             <a href="http://google.com">Portfolio</a>
             <a href="http://google.com">Logo</a>
           </header>
-          <div className="centred-div">
+          <section className="centred-div">
             <div>
               <h1>Bean</h1>
               <main>
@@ -20,7 +20,7 @@ export default function Header() {
                 doloribus, voluptatem impedit modi blanditiis sint asperiores!
               </main>
             </div>
-          </div>
+          </section>
         </div>
       </>
     );

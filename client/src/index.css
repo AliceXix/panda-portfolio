@@ -14,6 +14,7 @@ body {
 
 .header {
     background-color: aqua;
+    color: white;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -23,7 +24,7 @@ body {
     float: right;
     display: flex;
     flex-direction: row-reverse;
-    margin: 0em 4em;
+    margin: 1em 4em;
 }
 
 .header img {
@@ -31,7 +32,10 @@ body {
 }
 
 .header header a {
+    color: white;
+    font-size: 1.6rem;
     padding: 1em;
+    text-decoration: none;
 }
 
 .centred-div {
@@ -40,6 +44,16 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0em 24em;
+}
+
+.header .centred-div h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 0.2em;
+}
+
+.header .centred-div main {
+    font-size: 1.3rem;
 }
 
 /* --- VALUES --- */
