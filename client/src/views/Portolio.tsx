@@ -1,9 +1,13 @@
+import Grid from "../utils/Grid-portfolio";
+
 export default function Portfolio() {
 
     return (
       <>
         <div className="portfolio">
-          <section>Leave blank for portfolio grid</section>
+          <section className="grid-section">
+            <Grid/>
+          </section>
           <section className="centred-div">
             <div>
               <h2>CONTACT</h2>

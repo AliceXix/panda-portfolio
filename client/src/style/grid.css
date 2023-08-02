@@ -1,0 +1,15 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1em;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    height: 65vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.grid img {
+    max-width: 100%;
+}

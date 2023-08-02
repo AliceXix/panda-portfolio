@@ -115,6 +115,11 @@ body {
     font-size: 1.3rem;
 }
 
+.portfolio .grid-section {
+    background-color: black;
+    padding: 1em;
+}
+
 /* --- CONTACT --- */
 
 .contact {
