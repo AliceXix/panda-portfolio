@@ -9,75 +9,58 @@ export default function Values() {
     return (
       <>
         <div className="values">
-          <div className="cards">
+          <div className="widgets">
             <div className="card">
-              <div className="icon">
-                <img src={feminism} alt='feminism icon' />
-              </div>
-              <div className="title">
-                <h2>First Part</h2>
-              </div>
-              <div className="content">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dolorum atque assumenda deserunt minus doloremque alias nostrum
-                reprehenderit deleniti incidunt asperiores?
-              </div>
+              <img src={feminism} alt="feminism icon" />
+              <h3>FEMINISM</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                sagittis ipsum nec sapien semper gravida. Aliquam et enim
+                libero.
+              </p>
             </div>
 
             <div className="card">
-              <div className="icon">
-                <img src={neurodiv} alt='neurodivergent icon'/>
-              </div>
-              <div className="title">
-                <h2>Second Part</h2>
-              </div>
-              <div className="content">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dolorum atque assumenda deserunt minus doloremque alias nostrum
-                reprehenderit deleniti incidunt asperiores?
-              </div>
+              <img src={neurodiv} alt="neurodivergent icon" />
+              <h3>NEURODIVERGENT</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                sagittis ipsum nec sapien semper gravida. Aliquam et enim
+                libero.
+              </p>
             </div>
 
             <div className="card">
-              <div className="icon">
-                <img src={bipoc} alt='bipoc icon'/>
-              </div>
-              <div className="title">
-                <h2>Third Part</h2>
-              </div>
-              <div className="content">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dolorum atque assumenda deserunt minus doloremque alias nostrum
-                reprehenderit deleniti incidunt asperiores?
-              </div>
+              <img src={bipoc} alt="bipoc icon" />
+              <h3>BIPOC</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                sagittis ipsum nec sapien semper gravida. Aliquam et enim
+                libero.
+              </p>
             </div>
 
             <div className="card">
-              <div className="icon">
-               <img src={lgbtq} alt='lgbtq icon'/>
-              </div>
-              <div className="title">
-                <h2>Fourth Part</h2>
-              </div>
-              <div className="content">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dolorum atque assumenda deserunt minus doloremque alias nostrum
-                reprehenderit deleniti incidunt asperiores?
-              </div>
+              <img src={lgbtq} alt="lgbtq icon" />
+              <h3>LGBTQ</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                sagittis ipsum nec sapien semper gravida. Aliquam et enim
+                libero.
+              </p>
             </div>
           </div>
-          <div className="disclaimer">
-            <h1>Portfolio</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Adipisci, deleniti architecto? Nisi, iusto quibusdam nihil porro
-              dolore quod quis laboriosam tempore fuga dicta quos assumenda iste
-              sit maxime dolor hic eius quo omnis. Ipsam, repellat temporibus.
-              Necessitatibus rem, quasi harum ad repellat, tempore non corrupti
-              veniam numquam similique praesentium vitae odit officia eum
-              ratione impedit deserunt fugit. Asperiores at corrupti{" "}
-            </p>
-          </div>
+
+          <section className="centred-div">
+            <div>
+              <h2>PORTFOLIO</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                sagittis ipsum nec sapien semper gravida. Aliquam et enim
+                libero.
+              </p>
+            </div>
+          </section>
         </div>
       </>
     );
