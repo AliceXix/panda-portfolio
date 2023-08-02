@@ -5,7 +5,7 @@ export default function Portfolio() {
     return (
       <>
         <div className="portfolio">
-          <section>
+          <section className="grid-section">
             <Grid/>
           </section>
           <section className="centred-div">
