@@ -59,51 +59,38 @@ body {
 /* --- VALUES --- */
 
 .values {
-    background-color: black;
-    min-height: 100vh;
-}
-
-.cards {
-    background-color: rgb(14, 14, 14);
-    min-height: 50vh;
-    padding: 2rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.card {
-    color: white;
-    width: 20rem;
+    background-color: lightgray;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: space-between;
+    height: 100vh;
 }
 
-.icon>img {
+.widgets {
+    display: flex;
+    flex-direction: row;
+    margin: 0em 4em;
+    gap: 4.8em;
+    height: 65vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.values img {
     width: 100px;
-    border-radius: 50%;
 }
 
-.content {
-    text-align: center;
+.values section {
+    height: 35vh;
 }
 
-.disclaimer {
-    margin-top: 2rem;
-    padding-top: 5rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.values .centred-div h2 {
+    font-size: 2rem;
 }
 
-.disclaimer>p {
-    width: 60%;
-    text-align: center;
+.values .centred-div p {
+    font-size: 1.3rem;
 }
 
 /* --- PORTFOLIO --- */
