@@ -60,62 +60,26 @@ body {
 
 .values {
     background-color: lightgray;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-}
-
-.widgets {
+    padding: 0 4em;
     display: flex;
     flex-direction: row;
-    margin: 0em 4em;
-    gap: 4.8em;
-    height: 65vh;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
+    height: 31vh;
 }
 
 .values img {
     width: 100px;
 }
 
-.values section {
-    height: 35vh;
-}
-
-.values .centred-div h2 {
+.values h2 {
     font-size: 2rem;
-}
-
-.values .centred-div p {
-    font-size: 1.3rem;
 }
 
 /* --- PORTFOLIO --- */
 
 .portfolio {
-    background-color: lightgreen;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-}
-
-.portfolio .centred-div {
-    height: 35vh;
-}
-
-.portfolio .centred-div h2 {
-    font-size: 2rem;
-}
-
-.portfolio .centred-div p {
-    font-size: 1.3rem;
-}
-
-.portfolio .grid-section {
+    height: 65vh;
     background-color: black;
     padding: 1em;
 }
