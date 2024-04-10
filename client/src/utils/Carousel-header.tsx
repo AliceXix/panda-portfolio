@@ -19,7 +19,7 @@ const contentStyle: React.CSSProperties = {
 export default function CarouselHeader () {
 
     return (
-      <Carousel className="carousel">
+      <Carousel autoplay className="carousel">
         <div>
           <h3 style={contentStyle}>1</h3>
         </div>
