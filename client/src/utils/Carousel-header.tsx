@@ -6,14 +6,21 @@ import img2 from '../images/portfolio/127468745_836310560532547_9135039879861359
 import img3 from '../images/portfolio/128414387_135004088147300_7659237651471045112_n.jpg';
 import img4 from '../images/portfolio/133931721_427772245247695_8768601343619774433_n.jpg';
 
-const contentStyle: React.CSSProperties = {
-  height: "100vh",
-  color: "#fff",
-  lineHeight: "850px",
-  textAlign: "center",
-  background: "#364d79",
-  width: "100vw",
-};
+
+function FullScreenImage({backgroundImgUrl}: {backgroundImgUrl: string}) {
+  const contentStyle: React.CSSProperties = {
+    color: "#fff",
+    lineHeight: "850px",
+    textAlign: "center",
+    backgroundImage: `url(${backgroundImgUrl})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "100vw",
+    height: "100vh",
+  };
+
+  return <div className="full-screen-container" style={contentStyle}></div>;
+}
 
 
 export default function CarouselHeader () {
@@ -21,16 +28,16 @@ export default function CarouselHeader () {
     return (
       <Carousel autoplay className="carousel">
         <div>
-          <h3 style={contentStyle}>1</h3>
+          <FullScreenImage backgroundImgUrl={img1} />
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <FullScreenImage backgroundImgUrl={img2} />
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <FullScreenImage backgroundImgUrl={img3} />
         </div>
         <div>
-          <h3 style={contentStyle}>4</h3>
+          <FullScreenImage backgroundImgUrl={img4} />
         </div>
       </Carousel>
     );
