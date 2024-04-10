@@ -5,11 +5,13 @@ import Header from './views/Header';
 import Values from './views/Values';
 import Contact from './views/Contact';
 import Portfolio from './views/Portolio';
+import CarouselHeader from './utils/Carousel-header';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
+      <CarouselHeader/>
       <Values/>
       <Portfolio/>
       <Contact/>

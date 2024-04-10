@@ -154,3 +154,35 @@ body {
 .contact footer h4 {
     font-size: 1.3rem;
 }
+
+/* --- CAROUSEL --- */
+
+.carousel {
+    height: 100vh;
+}
+
+.carousel img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (orientation: landscape) {
+    .carousel img {
+        height: 100%;
+    }
+}
+
+@media (orientation: portrait) {
+    .carousel img {
+        width: 100%;
+    }
+}
+
+.full-screen-container {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
