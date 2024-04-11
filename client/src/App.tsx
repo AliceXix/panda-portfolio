@@ -7,19 +7,22 @@ import Contact from './views/Contact';
 import Portfolio from './views/Portolio';
 import CarouselHeader from './utils/Carousel-header';
 import Overlay from './utils/Overlay';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className="App">
-      <CarouselHeader/>
-      <Overlay>
-        <Header/>
-      </Overlay>
-      <Values/>
-      <Portfolio/>
-      <Contact/>
-    </div>
+    <Router>
+      <div className="App">
+        <CarouselHeader />
+        <Overlay>
+          <Header />
+        </Overlay>
+          <Values />
+          <Portfolio />
+          <Contact />
+      </div>
+    </Router>
   );
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../images/insta-logo.png';
 
 export default function Header() {
 
@@ -6,9 +8,11 @@ export default function Header() {
       <>
         <div className="header">
           <header>
-            <a href="http://google.com">Contact</a>
-            <a href="http://google.com">Portfolio</a>
-            <a href="http://google.com">Logo</a>
+            <a className='nav_menu' href="#contact">Contact</a>
+            <a className='nav_menu' href="#portfolio">Portfolio</a>
+            <a href="https://www.instagram.com/solanum_bean/" target='blank'>
+              <img src={logo} alt="insta logo" />
+            </a>
           </header>
           <section className="centred-div">
             <div>

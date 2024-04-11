@@ -27,11 +27,13 @@ body {
     margin: 1em 4em;
 }
 
-.header img {
-    height: 100vh;
+.header header img {
+        padding: 0em 1em ;
+        text-decoration: none;
+        height: 5rem;
 }
 
-.header header a {
+.header .nav_menu {
     color: white;
     font-size: 1.6rem;
     padding: 1em;

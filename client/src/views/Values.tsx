@@ -8,7 +8,7 @@ export default function Values() {
 
     return (
       <>
-        <div className="values">
+        <div className="values" id='portfolio'>
           <img src={bipoc} alt="bipoc icon" />
           <img src={neurodiv} alt="neurodivergent icon" />
           <h2>COME AS YOU ARE</h2>

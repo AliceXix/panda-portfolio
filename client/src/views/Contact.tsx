@@ -4,7 +4,7 @@ export default function Contact() {
 
     return (
       <>
-        <div className="contact">
+        <div className="contact" id='contact'>
           <form className="centred-div">
             <div>
               <div>
@@ -20,6 +20,7 @@ export default function Contact() {
                 id="questions"
                 name="questions"
                 value={`SHARE YOUR THOUGHTS.
+                
 Don’t hesitate to mention any special attention you might require. Ask all the questions you have.`}
                 rows={18}
                 cols={56}
