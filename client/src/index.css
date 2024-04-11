@@ -8,6 +8,10 @@ body {
     all: unset;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .App {
     text-align: center;
 }
