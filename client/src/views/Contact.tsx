@@ -1,3 +1,4 @@
+import { Modal } from 'antd';
 import React, { useState } from 'react';
 
 export default function Contact() {
@@ -34,6 +35,23 @@ export default function Contact() {
         });
     };
 
+    const info = () => {
+        Modal.success({
+            title: 'Success!',
+            content: (
+                        <div>
+                            <h3>
+                                Your mail has successfully been send to your favorite tattoo artist!
+                            </h3>
+                            <p>
+                                Please give them up to 3 business days to reply to you.
+                            </p>
+                        </div>
+            ),
+            onOk() {},
+        });
+    };
+
 
     return (
       <>
@@ -59,7 +77,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <input type="submit" value="SUBMIT" />
+                <input type="submit" value="SUBMIT" onClick={info}/>
               </div>
             </div>
             <div>
