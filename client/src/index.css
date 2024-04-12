@@ -131,6 +131,18 @@ html {
     border: 2px solid white;
     border-radius: 2px;
     margin: 4em 0 1em 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+
+.contact input[type=submit]:active {
+    background-color: black;
+    transition: background-color 0s; 
 }
 
 .contact textarea {
