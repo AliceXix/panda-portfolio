@@ -83,6 +83,34 @@ html {
     color: white;
 }
 
+@media (max-width: 450px) {
+    .values {
+        background-color: blue !important;
+        padding: 0 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 31vh;
+    }
+
+    .values img {
+        width: 50px;
+    }
+
+    .values h2 {
+        font-size: 1rem;
+    }
+
+    .values #lgbtq_icon {
+        width: 25px;
+    }
+
+    .values #bipoc_icon {
+        width: 70px;
+    }
+}
+
 /* --- PORTFOLIO --- */
 
 .portfolio {

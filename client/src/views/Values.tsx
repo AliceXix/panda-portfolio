@@ -9,10 +9,10 @@ export default function Values() {
     return (
       <>
         <div className="values" id='portfolio'>
-          <img src={bipoc} alt="bipoc icon" />
+          <img src={bipoc} alt="bipoc icon" id='bipoc_icon' />
           <img src={neurodiv} alt="neurodivergent icon" />
           <h2>COME AS YOU ARE</h2>
-          <img src={lgbtq} alt="lgbtq icon" />
+          <img src={lgbtq} alt="lgbtq icon" id='lgbtq_icon' />
           <img src={feminism} alt="feminism icon" />
         </div>
       </>
