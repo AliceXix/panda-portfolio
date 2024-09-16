@@ -16,6 +16,12 @@ html {
     text-align: center;
 }
 
+/* @media (max-width: 450px) {
+     {
+        max-width: 100vw !important;
+    };
+} */
+
 .header {
     background-color: rgba(0, 0, 0, 0.67);
     color: white;
@@ -62,6 +68,24 @@ html {
     font-size: 1.3rem;
 }
 
+@media (max-width: 450px) {
+
+    .header header {
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0em;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    .header .nav_menu {
+        font-size: 1.6rem;
+        padding: 0.3em;
+        text-decoration: none;
+    }
+}
+
 /* --- VALUES --- */
 
 .values {
@@ -84,8 +108,8 @@ html {
 }
 
 @media (max-width: 450px) {
+
     .values {
-        background-color: blue !important;
         padding: 0 1.5em;
         display: flex;
         flex-direction: row;
