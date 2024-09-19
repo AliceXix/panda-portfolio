@@ -52,15 +52,6 @@ const sendMail = app.post('/send-mail', upload.array('image', 10), (req, res, ne
       })) || [],
     };
 
-    // if (image) {
-    //     mailOptions.attachments = [
-    //         {
-    //             filename: image.originalname,
-    //             path: image.path,
-    //         },
-    //     ];
-    // }
-
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             console.error(err);
