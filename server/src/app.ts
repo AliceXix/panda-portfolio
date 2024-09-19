@@ -3,9 +3,12 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import "./db";
 import nodemailer from "nodemailer";
+import multer from "multer";
 
 const app = express();
 const port = 3000;
+
+const upload = multer({ dest: 'uploads/' });
 
 app
   .use(
@@ -24,8 +27,9 @@ app
   });
 
 
-const sendMail = app.post('/send-mail', (req, res, next) => {
+const sendMail = app.post('/send-mail', upload.array('image', 10), (req, res, next) => {
     const {name, mail, question} = req.body;
+    const image = req.files as Express.Multer.File[];
 
     const transporter = nodemailer.createTransport({
       host: "smtp.office365.com",
@@ -37,20 +41,33 @@ const sendMail = app.post('/send-mail', (req, res, next) => {
       },
     });
 
-    const mailOptions = {
+    const mailOptions : any = {
       from: "testing.development@hotmail.com",
       to: "alice.jost2902@gmail.com",
       subject: "New Contact Form Submission",
       text: `Name: ${name}\nEmail: ${mail}\nQuestions: ${question}`,
+      attachments: image?.map((image: any) => ({
+        filename: image.originalname,
+        path: image.path,
+      })) || [],
     };
+
+    // if (image) {
+    //     mailOptions.attachments = [
+    //         {
+    //             filename: image.originalname,
+    //             path: image.path,
+    //         },
+    //     ];
+    // }
 
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Internal Server Error');
+            res.status(500).json({error: 'Internal Server Error'});
         } else {
             console.log('Email sent: ' + info.response);
-            res.status(200).send('Email sent successfully');
+            res.status(200).json({message: 'Email sent successfully'});
         }
-    })
-})
+    });
+});
