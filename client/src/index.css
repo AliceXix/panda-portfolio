@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,300;0,500;1,100&display=swap');
 
-* {
+/* * {
     font-family: 'Josefin Slab';
-}
+} */
 
-body {
+/* body {
     all: unset;
-}
+} */
 
 html {
     scroll-behavior: smooth;
@@ -16,11 +16,27 @@ html {
     text-align: center;
 }
 
-/* @media (max-width: 450px) {
-     {
-        max-width: 100vw !important;
-    };
-} */
+/* Add box-sizing to avoid overflow issues */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Josefin Slab';
+}
+
+body {
+    all: unset;
+    margin: 0;
+    /* Ensure there is no default margin */
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
+}
+
+html,
+.App {
+    max-width: 100%;
+    /* Prevent content from exceeding the viewport width */
+}
 
 .header {
     background-color: rgba(0, 0, 0, 0.67);
@@ -38,9 +54,9 @@ html {
 }
 
 .header header img {
-        padding: 0em 1em ;
-        text-decoration: none;
-        height: 5rem;
+    padding: 0em 1em;
+    text-decoration: none;
+    height: 5rem;
 }
 
 .header .nav_menu {
@@ -71,6 +87,7 @@ html {
 @media (max-width: 450px) {
 
     .header header {
+        /* background-color: blue; */
         display: flex;
         flex-direction: column;
         margin: 1em 0em;
@@ -84,7 +101,15 @@ html {
         padding: 0.3em;
         text-decoration: none;
     }
+
+        .header {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 }
+
 
 /* --- VALUES --- */
 
@@ -194,7 +219,7 @@ html {
 
 .contact input[type=submit]:active {
     background-color: black;
-    transition: background-color 0s; 
+    transition: background-color 0s;
 }
 
 .contact textarea {
@@ -267,4 +292,190 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+@media (max-width: 767px) {
+
+    /* Universal Reset for Mobile */
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+
+    /* Collapsible Menu - Fixed Position */
+    .menu-icon {
+        display: block;
+        /* position: fixed; */
+        /* Fixes the menu icon to the screen */
+        top: 1em;
+        right: 1em;
+        font-size: 2rem;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        /* position: fixed; */
+        /* Fixed to stay visible on scroll */
+        top: 4em;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 5px;
+        padding: 1em;
+        z-index: 10;
+        width: 90vw;
+        /* Take 90% of screen width */
+        left: 5vw;
+        /* Center menu */
+        box-sizing: border-box;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu-item {
+        margin: 1em 0;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .menu-item img {
+        width: 20px;
+        /* Adjusted icon size */
+    }
+
+    /* First Screen - Carousel Section */
+    .carousel {
+        height: 100vh;
+        /* Exactly the device screen height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .carousel img {
+        width: 100vw;
+        /* Fill the screen width */
+        height: 100vh;
+        /* Fill the screen height */
+        object-fit: cover;
+        /* Cover the screen without stretching */
+    }
+
+    /* Center "Come as you are" and Portfolio Sections */
+    .centred-div,
+    .portfolio {
+        height: 45vh;
+        /* Each section takes less than half the screen */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 5vw;
+        /* Add padding to avoid text touching edges */
+        margin: 0;
+        box-sizing: border-box;
+        /* Include padding in width */
+        overflow: hidden;
+        /* Prevent overflow */
+    }
+
+    /* Scale down content for smaller screens */
+    .centred-div h1,
+    .portfolio h2 {
+        font-size: 1.5rem;
+        /* Adjust font size to fit */
+        line-height: 1.2;
+        /* Adjust line height for better fit */
+        margin: 0.5em 0;
+        max-width: 100%;
+        /* Prevent overflow */
+    }
+
+    .portfolio {
+        overflow-y: auto;
+        /* Enable scrolling */
+        padding: 0;
+    }
+
+    /* Contact Form - Stack elements vertically */
+    .contact {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5vw;
+        /* Add horizontal padding */
+        box-sizing: border-box;
+    }
+
+    .contact form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* Full width */
+        align-items: center;
+    }
+
+    .contact input[type=text],
+    .contact input[type=email] {
+        background-color: black;
+        width: 100%;
+        font-size: 1rem;
+        color: gray;
+        margin: 0.5em 0;
+        padding: 0.5em;
+        border: none;
+        border-bottom: 2px solid white;
+        box-sizing: border-box;
+    }
+
+    .contact textarea {
+        margin: 1em 0;
+        padding: 1em;
+        border: 2px solid white;
+        background-color: white;
+        color: black;
+        width: 100%;
+        height: 5em;
+        box-sizing: border-box;
+    }
+
+    .contact input[type=submit] {
+        background-color: black;
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        /* Full width */
+        padding: 0.5em;
+        font-size: 1.2rem;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 1em;
+        box-sizing: border-box;
+    }
+
+    /* Footer - Artists We Support Section */
+    .contact footer {
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
 }
