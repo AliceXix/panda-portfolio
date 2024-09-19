@@ -6,6 +6,7 @@ export default function Contact() {
         name: '',
         mail: '',
         question: '',
+        image: '',
     });
 
     const handleChange = (e :any) => {
@@ -17,14 +18,28 @@ export default function Contact() {
         //setFormData(e.target.value)
     };
 
+    const handleImageChange = (e : any) => {
+        setFormData({
+            ...formData,
+            image: e.target.files,
+        });
+    };
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
+
+        const form = new FormData();
+        form.append('name', formData.name);
+        form.append('mail', formData.mail);
+        form.append('question', formData.question);
+
+        for (let i = 0; i < formData.image.length; i++) {
+        form.append("image", formData.image[i]);
+        }
+
         fetch('http://localhost:3000/send-mail', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+            body: form
         })
         .then(response => response.json())
         .then(data => {
@@ -75,9 +90,17 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Your Mail"
                 />
+                <label>Attach an image:</label>
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  multiple
+                  onChange={handleImageChange}
+                />
               </div>
               <div>
-                <input type="submit" value="SUBMIT" onClick={info}/>
+                <input type="submit" value="SUBMIT" onClick={info} />
               </div>
             </div>
             <div>
