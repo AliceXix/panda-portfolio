@@ -6,7 +6,7 @@ export default function Contact() {
         name: '',
         mail: '',
         question: '',
-        image: '',
+        image: [] as File[],
     });
 
     const handleChange = (e :any) => {
@@ -19,10 +19,11 @@ export default function Contact() {
     };
 
     const handleImageChange = (e : any) => {
-        setFormData({
-            ...formData,
-            image: e.target.files,
-        });
+        const selectedFiles = Array.from(e.target.files) as File[];
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            image: [...prevFormData.image, ...selectedFiles],
+        }));
     };
 
     const handleSubmit = (e: any) => {
@@ -33,9 +34,13 @@ export default function Contact() {
         form.append('mail', formData.mail);
         form.append('question', formData.question);
 
-        for (let i = 0; i < formData.image.length; i++) {
-        form.append("image", formData.image[i]);
-        }
+        // for (let i = 0; i < formData.image.length; i++) {
+        // form.append("image", formData.image[i]);
+        // }
+
+        formData.image.forEach((file) => {
+            form.append('image', file);
+        });
 
         fetch('http://localhost:3000/send-mail', {
             method: 'POST',
@@ -90,14 +95,39 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Your Mail"
                 />
-                <label>Attach an image:</label>
+                <label>Attach images:</label>
                 <input
                   type="file"
                   id="image"
                   name="image"
                   multiple
                   onChange={handleImageChange}
+                  style={{ display: "none" }}
                 />
+
+                <button
+                  type="button"
+                  onClick={() => document.getElementById("image")?.click()} // Trigger file input click
+                  style={{
+                    padding: "0.5em",
+                    border: "2px solid white",
+                    background: "black",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  Select Files
+                </button>
+                
+                <div>
+                  {formData.image.length > 0 && (
+                    <ul>
+                      {formData.image.map((file, index) => (
+                        <li key={index}>{file.name}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
               <div>
                 <input type="submit" value="SUBMIT" onClick={info} />
