@@ -118,10 +118,10 @@ export default function Contact() {
                 >
                   Select Files
                 </button>
-                
-                <div>
+
+                <div className='wrapper_file_names'>
                   {formData.image.length > 0 && (
-                    <ul>
+                    <ul className='file_names'>
                       {formData.image.map((file, index) => (
                         <li key={index}>{file.name}</li>
                       ))}
