@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,300;0,500;1,100&display=swap');
 
-/* * {
-    font-family: 'Josefin Slab';
-} */
-
-/* body {
-    all: unset;
-} */
 
 html {
     scroll-behavior: smooth;
@@ -195,6 +188,48 @@ html,
     border: none;
     border-bottom: 2px solid white;
     border-radius: 0px;
+}
+
+.contact input[type=file] {
+    color: gray;
+}
+
+.contact button {
+    padding: 0.5em;
+    border: 2px solid white;
+    background: black;
+    color: gray;
+    cursor: pointer;
+}
+
+.wrapper_file_names {
+    align-items: center;
+}
+
+.file_names {
+    color: gray;
+    padding: 0em 1em;
+}
+
+.file_names li {
+    display: unset;
+    display: flex;
+    padding: 0.1em 0em;
+}
+
+.file_names ul {
+    padding: 0em 1em;
+    background-color: aqua;
+    border: red;
+}
+
+.file_names button {
+    margin-left: 10px;
+    padding: 0.2em 0.4em;
+    border: none;
+    background-color: black;
+    color: gray;
+    cursor: pointer;
 }
 
 .contact input[type=submit] {

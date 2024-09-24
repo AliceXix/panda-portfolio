@@ -6,6 +6,7 @@ export default function Contact() {
         name: '',
         mail: '',
         question: '',
+        image: [] as File[],
     });
 
     const handleChange = (e :any) => {
@@ -14,17 +15,38 @@ export default function Contact() {
             ...formData,
             [name]: value,
         });
-        //setFormData(e.target.value)
     };
+
+    const handleImageChange = (e : any) => {
+        const selectedFiles = Array.from(e.target.files) as File[];
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            image: [...prevFormData.image, ...selectedFiles],
+        }));
+    };
+
+    const removeImage = (indexToRemove: number) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            image: prevFormData.image.filter((_, index) => index !== indexToRemove),
+        }))
+    }
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
+
+        const form = new FormData();
+        form.append('name', formData.name);
+        form.append('mail', formData.mail);
+        form.append('question', formData.question);
+
+        formData.image.forEach((file) => {
+            form.append('image', file);
+        });
+
         fetch('http://localhost:3000/send-mail', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+            body: form
         })
         .then(response => response.json())
         .then(data => {
@@ -75,9 +97,43 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Your Mail"
                 />
+                <label>Attach images:</label>
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  multiple
+                  onChange={handleImageChange}
+                  style={{ display: "none" }}
+                />
+
+                <button
+                  type="button"
+                  onClick={() => document.getElementById("image")?.click()}
+                >
+                  Select Files
+                </button>
+
+                <div className="wrapper_file_names">
+                  {formData.image.length > 0 && (
+                    <ul className="file_names">
+                      {formData.image.map((file, index) => (
+                        <li key={index}>
+                          {file.name}
+                          <button
+                            type="button"
+                            onClick={() => removeImage(index)}
+                          >
+                            X
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
               <div>
-                <input type="submit" value="SUBMIT" onClick={info}/>
+                <input type="submit" value="SUBMIT" onClick={info} />
               </div>
             </div>
             <div>
