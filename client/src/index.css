@@ -209,10 +209,10 @@ html,
 .file_names {
     color: gray;
     padding: 0em 1em;
+    list-style-type: none;
 }
 
 .file_names li {
-    display: unset;
     display: flex;
     padding: 0.1em 0em;
 }
