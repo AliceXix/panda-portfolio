@@ -194,6 +194,14 @@ html,
     color: gray;
 }
 
+.contact button {
+    padding: 0.5em;
+    border: 2px solid white;
+    background: black;
+    color: gray;
+    cursor: pointer;
+}
+
 .wrapper_file_names {
     align-items: center;
 }
@@ -213,6 +221,15 @@ html,
     padding: 0em 1em;
     background-color: aqua;
     border: red;
+}
+
+.file_names button {
+    margin-left: 10px;
+    padding: 0.2em 0.4em;
+    border: none;
+    background-color: black;
+    color: gray;
+    cursor: pointer;
 }
 
 .contact input[type=submit] {

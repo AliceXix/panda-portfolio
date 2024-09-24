@@ -15,7 +15,6 @@ export default function Contact() {
             ...formData,
             [name]: value,
         });
-        //setFormData(e.target.value)
     };
 
     const handleImageChange = (e : any) => {
@@ -26,6 +25,13 @@ export default function Contact() {
         }));
     };
 
+    const removeImage = (indexToRemove: number) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            image: prevFormData.image.filter((_, index) => index !== indexToRemove),
+        }))
+    }
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
@@ -33,10 +39,6 @@ export default function Contact() {
         form.append('name', formData.name);
         form.append('mail', formData.mail);
         form.append('question', formData.question);
-
-        // for (let i = 0; i < formData.image.length; i++) {
-        // form.append("image", formData.image[i]);
-        // }
 
         formData.image.forEach((file) => {
             form.append('image', file);
@@ -107,23 +109,24 @@ export default function Contact() {
 
                 <button
                   type="button"
-                  onClick={() => document.getElementById("image")?.click()} // Trigger file input click
-                  style={{
-                    padding: "0.5em",
-                    border: "2px solid white",
-                    background: "black",
-                    color: "white",
-                    cursor: "pointer",
-                  }}
+                  onClick={() => document.getElementById("image")?.click()}
                 >
                   Select Files
                 </button>
 
-                <div className='wrapper_file_names'>
+                <div className="wrapper_file_names">
                   {formData.image.length > 0 && (
-                    <ul className='file_names'>
+                    <ul className="file_names">
                       {formData.image.map((file, index) => (
-                        <li key={index}>{file.name}</li>
+                        <li key={index}>
+                          {file.name}
+                          <button
+                            type="button"
+                            onClick={() => removeImage(index)}
+                          >
+                            X
+                          </button>
+                        </li>
                       ))}
                     </ul>
                   )}
