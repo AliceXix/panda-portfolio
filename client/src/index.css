@@ -185,7 +185,7 @@ html,
     flex-direction: column;
     justify-content: end;
     /*ADDED*/
-    min-height: 103vh;
+    min-height: 100vh;
 }
 
 .contact form {
@@ -369,7 +369,7 @@ html,
         }
     
                 #file {
-                    margin: 1em 0;
+                    margin-bottom: 1em;
                 }
     
         #submit {
@@ -461,9 +461,8 @@ html,
         overflow: hidden;
     }
 
- .centred-div,
- .portfolio > div {
-    padding-top: 28vh;
+ .centred-div {
+    padding-top: 24vh;
  }
 
     .centred-div h1,
@@ -497,7 +496,7 @@ html,
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding-bottom: 85px;
+        padding-bottom: 10vh;
     }
 
     .contact input[type=text],
@@ -515,9 +514,9 @@ html,
 
     .contact textarea {
         margin: 1em 0;
-        padding: 1.5em 0;
+        padding: 1.5em 1em;
         border: 2px solid white;
-        background-color: white;
+        background-color: black;
         color: black;
         width: 100%;
         height: 5em;
@@ -534,7 +533,7 @@ html,
         border: 2px solid white;
         cursor: pointer;
         transition: background-color 0.3s;
-        margin-top: 1.5em 0 1em 0;
+        margin-top: 1em;
         box-sizing: border-box;
     }
 
@@ -614,7 +613,7 @@ html,
 .form-container textarea {
     width: auto !important;
     max-width: 100%;
-    min-height: 350px;
+    min-height: 38vh;
 }
 
 .w-full {
@@ -629,4 +628,5 @@ footer div h4 {
 .left > div {
     display: flex;
     flex-direction: column;
+    padding-top: 0.5em;
 }
