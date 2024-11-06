@@ -9,7 +9,6 @@ html {
     text-align: center;
 }
 
-/* Add box-sizing to avoid overflow issues */
 *,
 *::before,
 *::after {
@@ -20,9 +19,7 @@ html {
 body {
     all: unset;
     margin: 0;
-    /* Ensure there is no default margin */
     overflow-x: hidden;
-    /* Prevent horizontal overflow */
 }
 
 html,
@@ -30,6 +27,25 @@ html,
     max-width: 100%;
     /* Prevent content from exceeding the viewport width */
 }
+
+
+/* --------- GRID --------- */
+    
+
+    
+
+    
+        #submit {
+            grid-area: submit;
+            width: 100%;
+        }
+    
+        #text {
+            grid-area: text;
+            width: 100%;
+        }
+        
+                /* --------- END GRID --------- */
 
 .header {
     background-color: rgba(0, 0, 0, 0.67);
@@ -61,7 +77,7 @@ html,
 
 .centred-div {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     align-items: center;
     justify-content: center;
     margin: 0em 24em;
@@ -167,20 +183,23 @@ html,
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    justify-content: end;
+    /*ADDED*/
+    min-height: 100vh;
 }
 
 .contact form {
-    display: flex;
-    flex-direction: row;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /*ADDED*/
+    /* min-height: 82vh; */
     justify-content: space-between;
     margin: 0em 4em;
 }
 
 .contact input[type=text] {
     background-color: black;
-    width: 30vw;
+    width: 28vw;
     font-size: 1.5rem;
     color: gray;
     margin: 2em 0 2em 0;
@@ -236,13 +255,11 @@ html,
     background-color: black;
     color: white;
     font-weight: 600;
-    width: 10vw;
     align-self: center;
     padding: 0.5em;
     font-size: 1.5rem;
     border: 2px solid white;
     border-radius: 2px;
-    margin: 4em 0 1em 0;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -266,21 +283,19 @@ html,
     color: grey;
 }
 
-.contact form div {
-    display: flex;
-    flex-direction: column;
-}
-
 .contact footer {
-    height: 25vh;
+    /* height: 25vh; */
     display: flex;
+    padding: 0 24px;
     flex-direction: row;
     border-top: 2px solid white;
     color: white;
+    /*ADDED*/
+    min-height: 15vh;
 }
 
 .contact footer div {
-    margin: 0em 4em;
+    /* margin: 0em 4em; */
 }
 
 .contact footer h4 {
@@ -332,7 +347,6 @@ html,
 
 @media (max-width: 767px) {
 
-    /* Universal Reset for Mobile */
     html,
     body {
         margin: 0;
@@ -341,6 +355,35 @@ html,
         overflow-x: hidden;
         /* Prevent horizontal scrolling */
     }
+
+        /* --------- GRID --------- */
+    
+        #name {
+            grid-area: name;
+            width: 100%;
+        }
+    
+        #email {
+            grid-area: email;
+            width: 100%;
+        }
+    
+                #file {
+                    margin-bottom: 1em;
+                }
+    
+        #submit {
+            grid-area: submit;
+            width: 100%;
+        }
+    
+        #text {
+            grid-area: text;
+            width: 100%;
+        }
+
+        /* --------- END GRID --------- */
+
 
     /* Collapsible Menu - Fixed Position */
     .menu-icon {
@@ -389,10 +432,8 @@ html,
         /* Adjusted icon size */
     }
 
-    /* First Screen - Carousel Section */
     .carousel {
         height: 100vh;
-        /* Exactly the device screen height */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -403,41 +444,33 @@ html,
 
     .carousel img {
         width: 100vw;
-        /* Fill the screen width */
         height: 100vh;
-        /* Fill the screen height */
         object-fit: cover;
-        /* Cover the screen without stretching */
     }
 
-    /* Center "Come as you are" and Portfolio Sections */
     .centred-div,
     .portfolio {
-        height: 45vh;
-        /* Each section takes less than half the screen */
+        /* height: 45vh; */
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         padding: 0 5vw;
-        /* Add padding to avoid text touching edges */
         margin: 0;
         box-sizing: border-box;
-        /* Include padding in width */
         overflow: hidden;
-        /* Prevent overflow */
     }
 
-    /* Scale down content for smaller screens */
+ .centred-div {
+    padding-top: 24vh;
+ }
+
     .centred-div h1,
     .portfolio h2 {
         font-size: 1.5rem;
-        /* Adjust font size to fit */
         line-height: 1.2;
-        /* Adjust line height for better fit */
         margin: 0.5em 0;
         max-width: 100%;
-        /* Prevent overflow */
     }
 
     .portfolio {
@@ -446,24 +479,24 @@ html,
         padding: 0;
     }
 
-    /* Contact Form - Stack elements vertically */
     .contact {
-        height: 100vh;
+        @media (min-width: 450px) { 
+            height: 100vh;
+        }
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
         padding: 0 5vw;
-        /* Add horizontal padding */
         box-sizing: border-box;
     }
 
     .contact form {
-        display: flex;
+        /* display: block; */
         flex-direction: column;
         width: 100%;
-        /* Full width */
         align-items: center;
+        padding-bottom: 10vh;
     }
 
     .contact input[type=text],
@@ -472,7 +505,7 @@ html,
         width: 100%;
         font-size: 1rem;
         color: gray;
-        margin: 0.5em 0;
+        margin: 1em 0;
         padding: 0.5em;
         border: none;
         border-bottom: 2px solid white;
@@ -481,9 +514,9 @@ html,
 
     .contact textarea {
         margin: 1em 0;
-        padding: 1em;
+        padding: 1.5em 1em;
         border: 2px solid white;
-        background-color: white;
+        background-color: black;
         color: black;
         width: 100%;
         height: 5em;
@@ -495,7 +528,6 @@ html,
         color: white;
         font-weight: 600;
         width: 100%;
-        /* Full width */
         padding: 0.5em;
         font-size: 1.2rem;
         border: 2px solid white;
@@ -505,12 +537,96 @@ html,
         box-sizing: border-box;
     }
 
-    /* Footer - Artists We Support Section */
     .contact footer {
-        height: 20vh;
+        /* height: 20vh; */
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
+        /* justify-content: center; */
+        /*ADDED 2*/
+        align-items: start;
+        width: 100vw;
+        /* padding: 1em; */
     }
+}
+
+
+/*add media @ for these classes */
+.hide-desktop {
+    display: none;
+    @media (max-width: 450px) { 
+        display: block;
+    }
+}
+
+.hide-mobile{
+    display: none;
+
+    @media (min-width: 450px) { 
+        display: block;
+    }
+}
+
+.form-container {
+    display: flex;
+    position: relative;
+    /*ADDED*/
+    /* padding-top: 100px; */
+    /* padding-bottom: 90px; */
+
+    @media (min-width: 450px) { 
+        margin-left: 24px;
+        padding-bottom: 155px;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 450px) { 
+        display: block;
+    }
+}
+
+
+.form-container .left {
+    /* Desktop-only */
+    @media (min-width: 450px) {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.form-container .right {
+    width: 60%;
+    display: block;
+
+    @media (min-width: 450px) { 
+        margin-left: 24px;
+    }
+
+    @media (max-width: 450px) { 
+        width: 100%;
+    }
+}
+
+.form-container .right #text {
+    width: 100%;
+}
+
+.form-container textarea {
+    width: auto !important;
+    max-width: 100%;
+    min-height: 38vh;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/*ADDED*/
+footer div h4 {
+    margin-top: 0.7 em;
+}
+
+.left > div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5em;
 }
