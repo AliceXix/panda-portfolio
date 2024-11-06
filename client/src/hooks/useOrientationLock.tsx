@@ -4,10 +4,13 @@ export default function useOrientationLock(): boolean {
   const [isLandscape, setIsLandscape] = useState(false);
 
   const handleOrientationChange = () => {
-    if (window.screen.orientation) {
+    const isMobile = window.innerWidth < 767;
+    if (isMobile && window.screen.orientation) {
       const isLandscapeNow =
         window.screen.orientation.type.startsWith("landscape");
       setIsLandscape(isLandscapeNow);
+    } else {
+      setIsLandscape(false);
     }
   };
 
@@ -21,6 +24,7 @@ export default function useOrientationLock(): boolean {
         handleOrientationChange
       );
     }
+    window.addEventListener("resize", handleOrientationChange);
 
     // Cleanup listener on component unmount
     return () => {
@@ -30,6 +34,7 @@ export default function useOrientationLock(): boolean {
           handleOrientationChange
         );
       }
+      window.removeEventListener("resize", handleOrientationChange);
     };
   }, []);
 
