@@ -37,48 +37,6 @@ app
     return console.log(`server is listening on ${port}`);
   });
 
-// const sendMail = app.post(
-//   "/send-mail",
-//   upload.array("image", 10),
-//   (req, res, next) => {
-//     const { name, mail, question } = req.body;
-//     const image = req.files as Express.Multer.File[];
-
-//     const transporter = nodemailer.createTransport({
-//       host: "smtp.office365.com",
-//       port: 587,
-//       secure: false,
-//       auth: {
-//         user: "development.application.testing@gmail.com",
-//         pass: "bnxz xwvm aqlv pedv",
-//       },
-//     });
-
-//     //sender -> email client
-
-//     const mailOptions: any = {
-//       from: "development.application.testing@gmail.com",
-//       to: "alice.jost2902@gmail.com",
-//       subject: "New Contact Form Submission",
-//       text: `Name: ${name}\nEmail: ${mail}\nQuestions: ${question}`,
-//       attachments:
-//         image?.map((image: any) => ({
-//           filename: image.originalname,
-//           path: image.path,
-//         })) || [],
-//     };
-
-//     transporter.sendMail(mailOptions, (err, info) => {
-//       if (err) {
-//         console.error(err);
-//         res.status(500).json({ error: "Internal Server Error" });
-//       } else {
-//         console.log("Email sent: " + info.response);
-//         res.status(200).json({ message: "Email sent successfully" });
-//       }
-//     });
-//   }
-
 const mailSender = app.post(
   "/send-mail",
   upload.array("image", 10),

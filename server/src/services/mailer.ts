@@ -50,7 +50,7 @@ export const sendMail = async (
     from: process.env.GMAIL_USER,
     to: "alice.jost2902@gmail.com",
     subject: "New Contact Form Submission",
-    message: `Name: ${name}\nEmail: ${mail}\nQuestions: ${question}`,
+    text: `Name: ${name}\nEmail: ${mail}\nQuestions: ${question}`,
     attachments:
       image?.map((image: any) => ({
         filename: image.originalname,
