@@ -9,6 +9,37 @@ export default function Contact() {
     image: [] as File[],
   });
 
+  const successMessage = () => {
+    Modal.success({
+      title: "Success!",
+      content: (
+        <div>
+          <h3>
+            Your mail has successfully been send to your favorite tattoo artist!
+          </h3>
+          <p>Please give them up to 3 business days to reply to you.</p>
+        </div>
+      ),
+      onOk() {},
+    });
+  };
+
+  const failureMessage = () => {
+    Modal.success({
+      title: "Oups!",
+      content: (
+        <div>
+          <h3>
+            Your mail has had an issue on it's way to your favorite tattoo
+            artist. Please refresh your page and try again.
+          </h3>
+          <p>If the issue persists, please come back later. We apologize.</p>
+        </div>
+      ),
+      onOk() {},
+    });
+  };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
@@ -50,26 +81,13 @@ export default function Contact() {
     })
       .then((response) => response.json())
       .then((data) => {
+        successMessage();
         console.log("Success:", data);
       })
       .catch((err) => {
+        failureMessage();
         console.error("Error:", err);
       });
-  };
-
-  const info = () => {
-    Modal.success({
-      title: "Success!",
-      content: (
-        <div>
-          <h3>
-            Your mail has successfully been send to your favorite tattoo artist!
-          </h3>
-          <p>Please give them up to 3 business days to reply to you.</p>
-        </div>
-      ),
-      onOk() {},
-    });
   };
 
   return (
@@ -140,7 +158,7 @@ export default function Contact() {
 
               <div>
                 <div className="hide-mobile">
-                  <input type="submit" value="SUBMIT" onClick={info} />
+                  <input type="submit" value="SUBMIT" />
                 </div>
               </div>
             </div>
@@ -163,7 +181,7 @@ Don’t hesitate to mention any special attention you might require. Ask all the
           </div>
 
           <div className="hide-desktop">
-            <input type="submit" value="SUBMIT" onClick={info} />
+            <input type="submit" value="SUBMIT" />
           </div>
         </form>
         <footer>
