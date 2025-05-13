@@ -1,13 +1,19 @@
+import { cleanup } from "@testing-library/react";
 import { Modal } from "antd";
-import React, { useState } from "react";
+import { clear } from "console";
+import React, { useRef, useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
+  const initialFormState = {
     name: "",
     mail: "",
     question: "",
     image: [] as File[],
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const successMessage = () => {
     Modal.success({
@@ -20,7 +26,13 @@ export default function Contact() {
           <p>Please give them up to 3 business days to reply to you.</p>
         </div>
       ),
-      onOk() {},
+      onOk: () => {
+        setFormData(initialFormState);
+
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+      },
     });
   };
 
