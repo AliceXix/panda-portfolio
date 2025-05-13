@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc --skipLibCheck && npm run build && node dist/app.js",
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "heroku-postbuild": "npm run build",
+    "start": "node dist/app.js"
   },
   "engines": {
     "node": "18.x"
