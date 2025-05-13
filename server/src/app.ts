@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 dotenv.config();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 console.log("GMAIL_USER:", process.env.GMAIL_USER);
 console.log("GMAIL_PASS:", process.env.GMAIL_PASS);
