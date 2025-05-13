@@ -3,6 +3,8 @@ import { Modal } from "antd";
 import { clear } from "console";
 import React, { useRef, useState } from "react";
 
+const API = process.env.REACT_APP_API_URL;
+
 export default function Contact() {
   const initialFormState = {
     name: "",
@@ -87,7 +89,7 @@ export default function Contact() {
       form.append("image", file);
     });
 
-    fetch("http://localhost:3000/send-mail", {
+    fetch(`${API}/send-mail`, {
       method: "POST",
       body: form,
     })
