@@ -1,6 +1,4 @@
-import { cleanup } from "@testing-library/react";
 import { Modal } from "antd";
-import { clear } from "console";
 import React, { useRef, useState } from "react";
 
 const API = process.env.REACT_APP_API_URL;
