@@ -559,7 +559,6 @@ html,
 
 .hide-mobile{
     display: none;
-
     @media (min-width: 450px) { 
         display: block;
     }
