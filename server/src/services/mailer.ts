@@ -1,11 +1,13 @@
-import nodemailer, { TransportOptions } from "nodemailer";
-import { google } from "googleapis";
 import dotenv from "dotenv";
+dotenv.config(); // ← load .env first!
+
+import nodemailer from "nodemailer";
+import { google } from "googleapis";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 
-const OAuth2 = google.auth.OAuth2;
+const { OAuth2 } = google.auth;
 
-const createTransporter = async () => {
+async function createTransporter() {
   const oauth2Client = new OAuth2(
     process.env.CLIENT_ID,
     process.env.CLIENT_SECRET,
@@ -16,57 +18,51 @@ const createTransporter = async () => {
     refresh_token: process.env.REFRESH_TOKEN,
   });
 
-  const accessToken = await new Promise((resolve, reject) => {
+  const accessToken = await new Promise<string>((resolve, reject) => {
     oauth2Client.getAccessToken((err, token) => {
       if (err) {
-        reject("Failed to create access token:(");
+        console.error("getAccessToken error:", err);
+        return reject(err);
+      }
+      if (!token) {
+        return reject(new Error("No token returned"));
       }
       resolve(token);
     });
   });
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
+  return nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
-      type: "OAuth2",
       user: process.env.GMAIL_USER,
-      accessToken: accessToken as string,
-      clientId: process.env.CLIENT_ID,
       pass: process.env.GMAIL_PASS,
-      refreshToken: process.env.REFRESH_TOKEN,
     },
-  } as SMTPTransport.Options);
+    tls: { rejectUnauthorized: false },
+  });
+}
 
-  return transporter;
-};
-
-export const sendMail = async (
+export async function sendMail(
   name: string,
   mail: string,
   question: string,
-  image: Express.Multer.File[]
-) => {
+  images: Express.Multer.File[] = []
+) {
+  const transporter = await createTransporter();
+
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: "alice.jost2902@gmail.com",
     subject: "New Contact Form Submission",
     text: `Name: ${name}\nEmail: ${mail}\nQuestions: ${question}`,
-    attachments:
-      image?.map((image: any) => ({
-        filename: image.originalname,
-        path: image.path,
-      })) || [],
+    attachments: images.map((img) => ({
+      filename: img.originalname,
+      path: img.path,
+    })),
   };
 
-  try {
-    const transporter = await createTransporter();
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email send: " + info.response);
-    console.log("SUCCESS");
-    return info;
-  } catch (err) {
-    console.log("Error sending email: " + err);
-    console.log("ERROR");
-    throw err;
-  }
-};
+  const info = await transporter.sendMail(mailOptions);
+  console.log("Email sent:", info.response);
+  return info;
+}
