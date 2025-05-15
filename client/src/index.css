@@ -45,7 +45,7 @@ html,
             width: 100%;
         }
         
-                /* --------- END GRID --------- */
+/* --------- END GRID --------- */
 
 .header {
     background-color: rgba(0, 0, 0, 0.67);
@@ -188,10 +188,6 @@ html,
 }
 
 .contact form {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /*ADDED*/
-    /* min-height: 82vh; */
     justify-content: space-between;
     margin: 0em 4em;
 }
@@ -283,7 +279,6 @@ html,
 }
 
 .contact footer {
-    /* height: 25vh; */
     display: flex;
     padding: 0 24px;
     flex-direction: row;
@@ -294,7 +289,6 @@ html,
 }
 
 .contact footer div {
-    /* margin: 0em 4em; */
 }
 
 .contact footer h4 {
@@ -355,7 +349,7 @@ html,
         /* Prevent horizontal scrolling */
     }
 
-        /* --------- GRID --------- */
+/* --------- GRID --------- */
     
         #name {
             grid-area: name;
@@ -381,13 +375,12 @@ html,
             width: 100%;
         }
 
-        /* --------- END GRID --------- */
+/* --------- END GRID --------- */
 
 
     /* Collapsible Menu - Fixed Position */
     .menu-icon {
         display: block;
-        /* position: fixed; */
         /* Fixes the menu icon to the screen */
         top: 1em;
         right: 1em;
@@ -399,7 +392,6 @@ html,
     .menu {
         display: none;
         flex-direction: column;
-        /* position: fixed; */
         /* Fixed to stay visible on scroll */
         top: 4em;
         right: 0;
@@ -449,7 +441,6 @@ html,
 
     .centred-div,
     .portfolio {
-        /* height: 45vh; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -484,7 +475,6 @@ html,
         }
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
         padding: 0 5vw;
         box-sizing: border-box;
@@ -492,7 +482,6 @@ html,
     }
 
     .contact form {
-        /* display: block; */
         flex-direction: column;
         width: 100%;
         align-items: center;
@@ -538,13 +527,10 @@ html,
     }
 
     .contact footer {
-        /* height: 20vh; */
         display: flex;
-        /* justify-content: center; */
         /*ADDED 2*/
         align-items: start;
         width: 100vw;
-        /* padding: 1em; */
     }
 }
 
@@ -568,8 +554,6 @@ html,
     display: flex;
     position: relative;
     /*ADDED*/
-    /* padding-top: 100px; */
-    /* padding-bottom: 90px; */
 
     @media (min-width: 450px) { 
         margin-left: 24px;
