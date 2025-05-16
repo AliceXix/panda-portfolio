@@ -538,15 +538,25 @@ html,
 /*add media @ for these classes */
 .hide-desktop {
     display: none;
-    @media (max-width: 450px) { 
+    /* @media (max-width: 450px) { 
         display: block;
+    } */
+}
+@media (max-width: 450px) {
+    .hide-desktop {
+    display: block;
     }
 }
 
 .hide-mobile{
     display: none;
-    @media (min-width: 450px) { 
+    /* @media (min-width: 450px) { 
         display: block;
+    } */
+}
+@media (min-width: 450px) {
+    .hide-mobile{
+    display: block;
     }
 }
 
