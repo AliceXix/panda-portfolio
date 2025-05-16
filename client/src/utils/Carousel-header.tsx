@@ -1,13 +1,12 @@
 import React from "react";
 import { Carousel } from "antd";
 
-import img1 from '../images/portfolio/127399826_730160057939254_1434634398258380236_n.jpg';
-import img2 from '../images/portfolio/127468745_836310560532547_91350398798613597_n.jpg';
-import img3 from '../images/portfolio/128414387_135004088147300_7659237651471045112_n.jpg';
-import img4 from '../images/portfolio/133931721_427772245247695_8768601343619774433_n.jpg';
+import img1 from "../images/portfolio/IMG_7869.jpeg";
+import img2 from "../images/portfolio/IMG_8437.jpeg";
+import img3 from "../images/portfolio/IMG_8513.jpeg";
+import img4 from "../images/portfolio/IMG_7317.jpeg";
 
-
-function FullScreenImage({backgroundImgUrl}: {backgroundImgUrl: string}) {
+function FullScreenImage({ backgroundImgUrl }: { backgroundImgUrl: string }) {
   const contentStyle: React.CSSProperties = {
     color: "#fff",
     lineHeight: "850px",
@@ -22,23 +21,21 @@ function FullScreenImage({backgroundImgUrl}: {backgroundImgUrl: string}) {
   return <div className="full-screen-container" style={contentStyle}></div>;
 }
 
-
-export default function CarouselHeader () {
-
-    return (
-      <Carousel autoplay className="carousel">
-        <div>
-          <FullScreenImage backgroundImgUrl={img1} />
-        </div>
-        <div>
-          <FullScreenImage backgroundImgUrl={img2} />
-        </div>
-        <div>
-          <FullScreenImage backgroundImgUrl={img3} />
-        </div>
-        <div>
-          <FullScreenImage backgroundImgUrl={img4} />
-        </div>
-      </Carousel>
-    );
+export default function CarouselHeader() {
+  return (
+    <Carousel autoplay className="carousel">
+      <div>
+        <FullScreenImage backgroundImgUrl={img1} />
+      </div>
+      <div>
+        <FullScreenImage backgroundImgUrl={img2} />
+      </div>
+      <div>
+        <FullScreenImage backgroundImgUrl={img3} />
+      </div>
+      <div>
+        <FullScreenImage backgroundImgUrl={img4} />
+      </div>
+    </Carousel>
+  );
 }
