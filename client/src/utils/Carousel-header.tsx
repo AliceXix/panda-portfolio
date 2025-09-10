@@ -1,6 +1,4 @@
 import React from "react";
-import { Carousel } from "antd";
-
 import imgI from "../images/portfolio/logo-panda.jpg";
 
 function FullScreenImage({ backgroundImgUrl }: { backgroundImgUrl: string }) {
@@ -18,12 +16,10 @@ function FullScreenImage({ backgroundImgUrl }: { backgroundImgUrl: string }) {
   return <div className="full-screen-container" style={contentStyle}></div>;
 }
 
-export default function CarouselHeader() {
+export default function HeaderBackground() {
   return (
-    <Carousel autoplay className="carousel">
-      <div>
-        <FullScreenImage backgroundImgUrl={imgI} />
-      </div>
-    </Carousel>
+    <div>
+      <FullScreenImage backgroundImgUrl={imgI} />
+    </div>
   );
 }
