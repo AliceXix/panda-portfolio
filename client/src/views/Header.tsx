@@ -20,10 +20,9 @@ export default function Header() {
           <div>
             <h1>Bean</h1>
             <main>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              eum delectus odio voluptates harum magnam, assumenda officia culpa
-              vero reprehenderit expedita reiciendis, deleniti doloribus,
-              voluptatem impedit modi blanditiis sint asperiores!
+              A safe, inclusive space where art meets self-expression. I create
+              tattoos that honor your story, celebrate your identity, and
+              empower you to be unapologetically yourself.
             </main>
           </div>
         </section>
